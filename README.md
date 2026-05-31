@@ -1,150 +1,74 @@
 # 📚 AI Research Paper Assistant using RAG
 
-An intelligent Research Paper Question-Answering System built using Retrieval-Augmented Generation (RAG), FAISS Vector Database, Sentence Transformers, LangChain, and Google Gemini 2.5 Flash.
+An intelligent Research Paper Question-Answering System built using **Retrieval-Augmented Generation (RAG)**, **FAISS Vector Database**, **Sentence Transformers**, **LangChain**, and **Google Gemini 2.5 Flash**.
 
-The application allows users to upload multiple research papers and ask natural language questions. Instead of relying solely on the language model's knowledge, the system retrieves the most relevant information from the uploaded papers and generates accurate context-aware answers.
-
----
-
-## 🚀 Features
-
-* 📄 Upload and process multiple research papers (PDFs)
-* 🔍 Semantic search using vector embeddings
-* 🧠 Retrieval-Augmented Generation (RAG)
-* 🤖 AI-powered question answering with Gemini 2.5 Flash
-* ⚡ Fast document retrieval using FAISS
-* 💬 Interactive Gradio chatbot interface
-* 📚 Context-aware responses generated from uploaded papers
-* 🌐 Shareable public demo link via Gradio
+The system allows users to ask natural language questions about uploaded research papers and receive context-aware answers generated from the document content.
 
 ---
 
-## 🏗️ System Architecture
+## 🚀 Live Demo
 
-User Question
-↓
-FAISS Vector Search
-↓
-Retrieve Relevant Chunks
-↓
-Construct Context
-↓
-Gemini 2.5 Flash
-↓
-Generated Answer
+🔗 **Hugging Face Space:**
+https://huggingface.co/spaces/thetanmayagarwal/ai-research-paper-assistant
+
+🔗 **GitHub Repository:**
+https://github.com/theTanmayAgarwal/AI-Research-Paper-Assistant
+
+---
+
+## 📌 Features
+
+* 📄 Load and process multiple research papers (PDFs)
+* ✂️ Intelligent document chunking using LangChain
+* 🧠 Semantic embeddings using Sentence Transformers
+* 🔍 Fast similarity search with FAISS
+* 🤖 Context-aware answer generation using Gemini 2.5 Flash
+* 💬 Interactive chatbot interface built with Gradio
+* ☁️ Deployed on Hugging Face Spaces
+* 📚 Retrieval-Augmented Generation (RAG) pipeline
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Languages
-
-* Python
-
-### AI & Machine Learning
+### AI / Machine Learning
 
 * Google Gemini 2.5 Flash
 * Sentence Transformers
+* FAISS
 * LangChain
 
-### Vector Database
+### Backend
 
-* FAISS (Facebook AI Similarity Search)
-
-### Document Processing
-
-* PyPDF
+* Python
 
 ### Frontend
 
 * Gradio
 
----
+### Deployment
 
-## 📂 Project Workflow
-
-### Step 1: Load Research Papers
-
-Research papers are uploaded in PDF format and loaded into the system.
-
-### Step 2: Split Documents
-
-Large documents are divided into smaller chunks for efficient retrieval.
-
-### Step 3: Generate Embeddings
-
-Sentence Transformers convert text chunks into dense vector embeddings.
-
-### Step 4: Store in FAISS
-
-All embeddings are stored in a FAISS vector database for similarity search.
-
-### Step 5: Retrieve Relevant Context
-
-When a user asks a question, the most relevant document chunks are retrieved.
-
-### Step 6: Generate Response
-
-The retrieved context is provided to Gemini 2.5 Flash, which generates a final answer.
+* Hugging Face Spaces
 
 ---
 
-## 📸 Demo
+## 🏗️ Project Architecture
 
-### Example Question
-
-What is BERT?
-
-### Example Response
-
-BERT is a multi-layer bidirectional Transformer encoder that learns contextual representations from both left and right contexts simultaneously. It is pre-trained using Masked Language Modeling and fine-tuned for downstream NLP tasks.
-
----
-
-## 📦 Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/AI-Research-Paper-Assistant.git
-cd AI-Research-Paper-Assistant
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
+User Question
+↓
+FAISS Similarity Search
+↓
+Relevant Research Paper Chunks Retrieved
+↓
+Context Sent to Gemini 2.5 Flash
+↓
+Grounded Answer Generated
+↓
+Response Displayed in Gradio Chat Interface
 
 ---
 
-## 🔑 Environment Setup
-
-Create a Gemini API Key from Google AI Studio.
-
-Set your API key:
-
-```python
-from google import genai
-
-client = genai.Client(
-    api_key="YOUR_GEMINI_API_KEY"
-)
-```
-
----
-
-## ▶️ Run the Application
-
-```bash
-python app.py
-```
-
-or run the notebook in Google Colab.
-
----
-
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```text
 AI-Research-Paper-Assistant/
@@ -152,59 +76,96 @@ AI-Research-Paper-Assistant/
 ├── app.py
 ├── requirements.txt
 ├── README.md
+│
 ├── ResearchPaper1.pdf
 ├── ResearchPaper2.pdf
 ├── ResearchPaper3.pdf
+│
 └── screenshots/
 ```
 
 ---
 
-## 🎯 Future Improvements
+## ⚙️ Installation
 
-* Upload PDFs directly through the UI
-* Source citations and page references
-* Chat history memory
-* Multi-document summarization
-* Support for DOCX and TXT files
-* Deployment on Hugging Face Spaces
-* User authentication and document management
+### Clone the repository
+
+```bash
+git clone https://github.com/theTanmayAgarwal/AI-Research-Paper-Assistant.git
+cd AI-Research-Paper-Assistant
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Set Gemini API Key
+
+Create an environment variable:
+
+```bash
+export GEMINI_API_KEY="YOUR_API_KEY"
+```
+
+### Run the application
+
+```bash
+python app.py
+```
 
 ---
 
-## 📈 Learning Outcomes
+## 🧪 Example Questions
 
-Through this project, I gained hands-on experience with:
+Try asking:
+
+* What is BERT?
+* How is the model trained?
+* What datasets were used?
+* What are the limitations of the proposed approach?
+* Summarize the main contributions of the paper.
+* What future work is suggested?
+
+---
+
+## 📈 Future Improvements
+
+* Upload custom PDFs directly from the UI
+* Persistent FAISS index storage
+* Citation and page-level source references
+* Multi-document comparison
+* Conversation memory
+* Streaming responses
+* Advanced RAG techniques (Hybrid Search, Re-ranking)
+
+---
+
+## 🎯 Learning Outcomes
+
+Through this project, I gained practical experience with:
 
 * Retrieval-Augmented Generation (RAG)
-* Large Language Models (LLMs)
 * Vector Databases
-* Semantic Search
-* Prompt Engineering
+* Embeddings and Semantic Search
+* Large Language Model Integration
 * LangChain Framework
-* Document Question Answering
-* AI Application Deployment
-
----
-
-## 🤝 Contributing
-
-Contributions, suggestions, and improvements are welcome.
-
-Feel free to fork the repository and submit a pull request.
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
+* Hugging Face Deployment
+* End-to-End AI Application Development
 
 ---
 
 ## 👨‍💻 Author
 
-Tanmay Agarwal
+**Tanmay Agarwal**
 
-B.Tech Student | AI & Machine Learning Enthusiast
+GitHub: https://github.com/theTanmayAgarwal
+
+LinkedIn: [www.linkedin.com/in/thetanmayagarwal](http://www.linkedin.com/in/thetanmayagarwal)
+
+---
+
+## ⭐ Support
 
 If you found this project useful, consider giving it a ⭐ on GitHub.
